@@ -24,33 +24,40 @@ fondo = Label(ventana, image=img)
 fondo.place(x=0, y=0, relwidth=1, relheight=1)
 fondo.pack()
 
+
+
 def juego():
-  ventana1= Tk()
+  #ventana1= Tk()
+  botonStart.place_forget()
+  botonmusica.place_forget()
 
   def circulo():
 
    circulo=1
 
-  botoncirculo= Button(ventana1,text="CIRCULO",width=30, height=4,command=circulo)
+  botoncirculo= Button(ventana,text="CIRCULO",width=30, height=4,command=circulo)
   botoncirculo.place(x=120,y=450)
 
   def triangulo():
 
    triangulo=0
 
-  botontriangulo= Button(ventana1,text="TRIANGULO",width=30, height=4,command=triangulo)
+  botontriangulo= Button(ventana,text="TRIANGULO",width=30, height=4,command=triangulo)
   botontriangulo.place(x=420,y=450)
 
   def cuadrado():
 
    cuadrado=2
 
-  botoncuadrado= Button(ventana1,text="CUADRADO",width=30, height=4,command=cuadrado)
+  botoncuadrado= Button(ventana,text="CUADRADO",width=30, height=4,command=cuadrado)
   botoncuadrado.place(x=720,y=450)
 
 
   def menu():
    ventana
+   botoncirculo.place_forget()
+   botontriangulo.place_forget()
+   botoncuadrado.place_forget()
    botonStart = Button(ventana,text="JUGAR",width=20, height=4,command=juego)
    botonStart.place(x=450,y=250)
 
@@ -65,18 +72,18 @@ def juego():
    fondo = Label(ventana, image=img)
    fondo.pack()
    
-  botvolvermenu= Button(ventana1,text="MENU",width=10, height=2,command=menu)
+  botvolvermenu= Button(ventana,text="MENU",width=10, height=2,command=menu)
   botvolvermenu.place(x=5,y=2)
 
 
 
-  ventana1.geometry("1030x600") #definiendo el tamaño de la ventana
-  ventana1.configure(bg="red")
-  ventana1.mainloop()
+  #ventana1.geometry("1030x600") #definiendo el tamaño de la ventana
+  #ventana1.configure(bg="red")
+  #ventana1.mainloop()
 
 
 def menumusica():
-  ventana
+  #ventana
 
   def apagar():
 
@@ -99,7 +106,7 @@ def menumusica():
   botonon.place(x=450,y=350)
 
 
-  def menu():
+  def menuVolver():
    ventana
    botonStart = Button(ventana,text="JUGAR",width=20, height=4,command=juego)
    botonStart.place(x=450,y=250)
@@ -114,7 +121,7 @@ def menumusica():
    fondo = Label(ventana, image=img)
    fondo.pack()
 
-  botvolvermenu= Button(ventana,text="MENU",width=10, height=2,command=menu)
+  botvolvermenu= Button(ventana,text="MENU",width=10, height=2,command=menuVolver)
   botvolvermenu.place(x=5,y=2)
 
 

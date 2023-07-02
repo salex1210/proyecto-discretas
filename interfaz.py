@@ -68,39 +68,47 @@ def juego():
 def menumusica():
   #ventana
 
-  def apagar():
+  if botonmusica.winfo_ismapped():
+    apagar()
+    botonmusica.configure(text="MUSICA: OFF")
+
+  else:
+    encender()
+    botonmusica.configure(text="MUSICA: ON")
+  
+def apagar():
 
    pygame.mixer.init()
    pygame.mixer.music.load("Raiders March.mp3")
    pygame.mixer.music.pause()
 
  
-  botonoff= Button(ventana,text="OFF",width=20, height=4,command=apagar)
-  botonoff.place(x=450,y=250)
+  #botonoff= Button(ventana,text="OFF",width=20, height=4,command=apagar)
+  #botonoff.place(x=450,y=250)
 
-  def encender():
-
+def encender():
+   #pygame.mixer.music.play()
    pygame.mixer.init()
    pygame.mixer.music.load("Raiders March.mp3")
    pygame.mixer.music.play(-1)
 
 
-  botonon= Button(ventana,text="ON",width=20, height=4,command=encender)
-  botonon.place(x=450,y=350)
+  #botonon= Button(ventana,text="ON",width=20, height=4,command=encender)
+  #botonon.place(x=450,y=350)
 
 
-  botvolvermenu= Button(ventana,text="MENU",width=10, height=2,command=menuVolver)
-  botvolvermenu.place(x=5,y=2)
+  #botvolvermenu= Button(ventana,text="MENU",width=10, height=2,command=menuVolver)
+  #botvolvermenu.place(x=5,y=2)
 
 
 
-  ventana.geometry("1030x600") #definiendo el tamaño de la ventana
-  imagen = Image.open('fond0.png')
-  imagen = imagen.resize((1030,600), Image.ANTIALIAS)
-  img = ImageTk.PhotoImage(imagen)
-  fondo = Label(ventana, image=img)
-  fondo.pack()
-  ventana.mainloop()
+  #ventana.geometry("1030x600") #definiendo el tamaño de la ventana
+  #imagen = Image.open('fond0.png')
+  #imagen = imagen.resize((1030,600), Image.ANTIALIAS)
+  #img = ImageTk.PhotoImage(imagen)
+  #fondo = Label(ventana, image=img)
+  #fondo.pack()
+  #ventana.mainloop()
 
 def menuVolver():
    ventana
@@ -124,7 +132,7 @@ def menuVolver():
 botonStart = Button(ventana,text="JUGAR",width=20, height=4,command=juego)
 botonStart.place(x=450,y=250)
 
-botonmusica = Button(ventana,text="MÚSICA",width=20, height=4,command=menumusica)
+botonmusica = Button(ventana,text="MÚSICA: ON",width=20, height=4,command=menumusica)
 botonmusica.place(x=450,y=350)
 
 

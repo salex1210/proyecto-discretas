@@ -106,21 +106,6 @@ def menumusica():
   botonon.place(x=450,y=350)
 
 
-  def menuVolver():
-   ventana
-   botonStart = Button(ventana,text="JUGAR",width=20, height=4,command=juego)
-   botonStart.place(x=450,y=250)
-
-   botonmusica = Button(ventana,text="MÚSICA",width=20, height=4,command=menumusica)
-   botonmusica.place(x=450,y=350) 
-
-   ventana.geometry("1030x600") #definiendo el tamaño de la ventana
-   imagen = Image.open('fond0.png')
-   imagen = imagen.resize((1030,600), Image.ANTIALIAS)
-   img = ImageTk.PhotoImage(imagen)
-   fondo = Label(ventana, image=img)
-   fondo.pack()
-
   botvolvermenu= Button(ventana,text="MENU",width=10, height=2,command=menuVolver)
   botvolvermenu.place(x=5,y=2)
 
@@ -134,6 +119,22 @@ def menumusica():
   fondo.pack()
   ventana.mainloop()
 
+def menuVolver():
+   ventana
+   #botvolvermenu.place_forget()
+   
+   botonStart = Button(ventana,text="JUGAR",width=20, height=4,command=juego)
+   botonStart.place(x=450,y=250)
+
+   botonmusica = Button(ventana,text="MÚSICA",width=20, height=4,command=menumusica)
+   botonmusica.place(x=450,y=350) 
+
+   ventana.geometry("1030x600") #definiendo el tamaño de la ventana
+   imagen = Image.open('fond0.png')
+   imagen = imagen.resize((1030,600), Image.ANTIALIAS)
+   img = ImageTk.PhotoImage(imagen)
+   fondo = Label(ventana, image=img)
+   fondo.pack()
 
 botonStart = Button(ventana,text="JUGAR",width=20, height=4,command=juego)
 botonStart.place(x=450,y=250)
@@ -145,5 +146,8 @@ botonmusica.place(x=450,y=350)
 ventana.geometry("1030x600") #definiendo el tamaño de la ventana
 ventana.title("GEOMETRY SAFARI") #Nombre de la ventana
 
+#botones juego
+
+#boton menu
 
 ventana.mainloop()

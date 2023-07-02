@@ -31,30 +31,13 @@ def juego():
   botonStart.place_forget()
   botonmusica.place_forget()
 
-  def circulo():
-
-   circulo=1
-
-  botoncirculo= Button(ventana,text="CIRCULO",width=30, height=4,command=circulo)
   botoncirculo.place(x=120,y=450)
-
-  def triangulo():
-
-   triangulo=0
-
-  botontriangulo= Button(ventana,text="TRIANGULO",width=30, height=4,command=triangulo)
   botontriangulo.place(x=420,y=450)
-
-  def cuadrado():
-
-   cuadrado=2
-
-  botoncuadrado= Button(ventana,text="CUADRADO",width=30, height=4,command=cuadrado)
   botoncuadrado.place(x=720,y=450)
-
 
   def menu():
    ventana
+   botvolvermenu.place_forget()
    botoncirculo.place_forget()
    botontriangulo.place_forget()
    botoncuadrado.place_forget()
@@ -72,7 +55,7 @@ def juego():
    fondo = Label(ventana, image=img)
    fondo.pack()
    
-  botvolvermenu= Button(ventana,text="MENU",width=10, height=2,command=menu)
+  botvolvermenu= Button(ventana,text="MENU",width=10, height=2,command=menuVolver)
   botvolvermenu.place(x=5,y=2)
 
 
@@ -122,7 +105,9 @@ def menumusica():
 def menuVolver():
    ventana
    #botvolvermenu.place_forget()
-   
+   botoncirculo.place_forget()
+   botoncuadrado.place_forget()
+   botontriangulo.place_forget()
    botonStart = Button(ventana,text="JUGAR",width=20, height=4,command=juego)
    botonStart.place(x=450,y=250)
 
@@ -147,7 +132,28 @@ ventana.geometry("1030x600") #definiendo el tamaño de la ventana
 ventana.title("GEOMETRY SAFARI") #Nombre de la ventana
 
 #botones juego
+def circulo():
 
+   circulo=1
+   print(circulo)
+
+def triangulo():
+
+   triangulo=0
+   print(triangulo)
+
+def cuadrado():
+
+   cuadrado=2
+   print(cuadrado)
+
+botoncirculo= Button(ventana,text="CIRCULO",width=30, height=4,command=circulo)
+botontriangulo= Button(ventana,text="TRIANGULO",width=30, height=4,command=triangulo)
+botoncuadrado= Button(ventana,text="CUADRADO",width=30, height=4,command=cuadrado)
 #boton menu
+
+
+
+
 
 ventana.mainloop()
